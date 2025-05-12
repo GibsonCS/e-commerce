@@ -42,7 +42,7 @@ export default function Example() {
                 <div className="text-sm">
                   <a
                     href="#"
-                    className="font-semibold text-indigo-600 hover:text-indigo-500"
+                    className="font-semibold text-emerald-400 hover:text-indigo-500"
                   >
                     Esqueceu a senha?
                   </a>
@@ -63,7 +63,7 @@ export default function Example() {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer"
+                className="flex w-full justify-center rounded-md bg-gradient-to-l hover:shadow hover:shadow-emerald-500 transition-all from-emerald-800 to-emerald-500 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer"
               >
                 Entrar
               </button>
@@ -74,7 +74,7 @@ export default function Example() {
             Não tem cadastro?{" "}
             <a
               href="#"
-              className="font-semibold text-indigo-600 hover:text-indigo-500"
+              className="font-semibold text-emerald-400 hover:text-indigo-500"
             >
               Clique aqui
             </a>
