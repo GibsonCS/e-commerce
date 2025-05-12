@@ -9,7 +9,7 @@ export default function Aside() {
   ];
   return (
     <aside className="border-b border-r border-gray-800 w-1/6 h-full flex flex-col ">
-      <span className="text-center text-xl p-1 bg-gradient-to-b from-blue-300">
+      <span className="text-center text-xl p-1 bg-gradient-to-b from-emerald-500">
         Menu
       </span>
       {items.map((item, index) => (
