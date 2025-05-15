@@ -1,6 +1,14 @@
 import Aside from "@/components/Aside";
+import {auth} from '../../../auth'
+import { redirect } from "next/navigation";
 
-export default function AdminPage() {
+export default async function AdminPage() {
+    const session = await auth()
+
+    if(!session?.user?.email) {
+      redirect('/login')
+    }
+
   return (
     <div className="flex h-full">
       <Aside />
