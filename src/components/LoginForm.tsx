@@ -1,7 +1,18 @@
+
 import Image from "next/image";
 import Logo from "@/assets/images/logo.svg";
+import { signIn } from "../../auth";
 
-export default function Example() {
+export default async function Example() {
+  async function handleLogin (formData: FormData) {
+    //"use server" the function must be execute by server"
+    "use server";
+    const email = formData.get("email")
+    const password = formData.get('password')
+    //call authorize function at the auth.ts
+   await signIn("credentials", {email, password, redirectTo: "/admin"})
+  }
+
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -14,7 +25,7 @@ export default function Example() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form action="/login" method="POST" className="space-y-6">
+          <form action={handleLogin} className="space-y-6">
             <div>
               <label htmlFor="email" className="block text-sm/6 font-medium ">
                 Email
