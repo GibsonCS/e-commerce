@@ -9,6 +9,8 @@ import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import Link from "next/link";
+import { signOut } from "../../auth";
+import { SignOut } from "./SignOutButton";
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -19,6 +21,11 @@ export default function AccountMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const handleLogout = () => {
+    signOut({ redirectTo: "/login" });
+  };
+
   return (
     <>
       <div title="Menu">
@@ -90,11 +97,11 @@ export default function AccountMenu() {
           </ListItemIcon>
           <Link href={"/"}>Configurações</Link>
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={() => handleLogout}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
-          Sair
+          <SignOut />
         </MenuItem>
       </Menu>
     </>
