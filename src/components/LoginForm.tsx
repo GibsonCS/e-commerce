@@ -1,21 +1,34 @@
+"use client";
 import Image from "next/image";
 import Logo from "@/assets/images/logo.svg";
+import { login } from "@/lib/login";
+import { useState } from "react";
 
 export default function Example() {
+  const [error, setError] = useState("");
+
+  const handleLogin = async (formData: FormData) => {
+    const result = await login(formData);
+    if (result?.error) setError(result.error);
+  };
+
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <Image alt="Your Company" src={Logo} className="mx-auto "></Image>
-
-          <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight">
+          <Image alt="Your Company" src={Logo} className="mx-auto w-32"></Image>
+          <h2 className="pt-2 text-center text-2xl/9 font-bold tracking-tight">
             Faça login com sua conta
           </h2>
         </div>
-
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form action="/login" method="POST" className="space-y-6">
+        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+          <form action={handleLogin} className="space-y-6">
             <div>
+              {error && (
+                <span className="w-full flex justify-center pt-8 text-red-500">
+                  {error}
+                </span>
+              )}
               <label htmlFor="email" className="block text-sm/6 font-medium ">
                 Email
               </label>
@@ -30,7 +43,6 @@ export default function Example() {
                 />
               </div>
             </div>
-
             <div>
               <div className="flex items-center justify-between">
                 <label
@@ -59,8 +71,7 @@ export default function Example() {
                 />
               </div>
             </div>
-
-            <div>
+            <div className="flex flex-col gap-2">
               <button
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-gradient-to-l hover:shadow hover:shadow-emerald-500 transition-all from-emerald-800 to-emerald-500 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer"
@@ -69,7 +80,6 @@ export default function Example() {
               </button>
             </div>
           </form>
-
           <p className="mt-10 text-center text-sm/6 text-gray-500">
             Não tem cadastro?{" "}
             <a
