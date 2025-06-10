@@ -6,7 +6,7 @@ export const { signIn, signOut, auth, handlers } = NextAuth({
   providers: [
     Credentials({
       credentials: {
-        username: {},
+        email: {},
         password: {},
       },
       // This function is called when sigIn() is called
@@ -16,14 +16,13 @@ export const { signIn, signOut, auth, handlers } = NextAuth({
           return {
             id: "123",
             name: "Gibson",
-            mail: credentials.username,
           };
         }
-        return null;
+        throw new Error('Credenciais incorretas');
       },
     }),
   ],
-  //Change defult page (/api/auth/sigin) to custom login page
+  //Change default page (/api/auth/sigin) to custom login page
   pages: {
     signIn: "/login",
   },

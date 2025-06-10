@@ -1,19 +1,24 @@
-import { signIn } from "next-auth/react";
-import { redirect } from "next/navigation";
+'use server'
 
-export async function login(formData: FormData) {
+import { redirect } from "next/navigation";
+import { signIn } from "../../auth";
+
+export async function login(_currentState: unknown, formData: FormData) {
   const email = formData.get("email");
   const password = formData.get("password");
 
-  //signIn function call authorize function from auth.ts
-  const result = await signIn("credentials", {
-    email,
-    password,
-    redirect: false,
-  });
-
-  if (!result || result.error) {
-    return { error: "Usuário não encontrado" };
+  try {
+    //signIn function call authorize function from auth.ts
+    await signIn("credentials", {
+      email,
+      password,
+      redirect: false
+    })
   }
-  redirect("/admin");
+  catch (error) {
+    console.error(error)
+    return { success: false, message: 'Usuário nao existe' }
+  }
+  return redirect('http://localhost:3000/admin')
 }
+

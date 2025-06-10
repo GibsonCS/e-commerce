@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
+
 
 export const metadata: Metadata = {
-  title: "Supreme law",
+  title: "EXtude",
   description: "Course for judge area",
 };
 
 
-export default function RootLayout({
+export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
     <html lang="pt-br">
-      <body>{children}</body>
+      <body>
+        <main>{children}</main>
+      </body>
     </html>
   )
 }
