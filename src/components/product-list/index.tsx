@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 const products = [
   {
     id: 1,
@@ -74,7 +76,7 @@ export default function ProductList() {
               key={product.id}
               className="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white"
             >
-              <img
+              <Image
                 alt={product.imageAlt}
                 src={product.imageSrc}
                 className="aspect-3/4 w-full bg-gray-200 object-cover group-hover:opacity-75 sm:aspect-auto sm:h-96"

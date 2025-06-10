@@ -23,7 +23,7 @@ const navigation = [
   { name: 'Relatórios', href: '#', icon: ChartPieIcon, current: false },
 ]
 
-function classNames(...classes: any) {
+function classNames(...classes: unknown[]) {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -137,8 +137,8 @@ export default function Dashboard({user}: DashboardProps) {
                     href="#"
                     className="flex items-center gap-x-4 px-6 py-3 text-sm/6 font-semibold text-white hover:bg-gray-800"
                   >
-                    <img
-                      alt=""
+                    <Image
+                      alt="avatar"
                       src={user.avatar}
                       className="size-8 rounded-full bg-gray-800"
                     />
@@ -161,8 +161,8 @@ export default function Dashboard({user}: DashboardProps) {
           <div className="flex-1 text-sm/6 font-semibold text-white">Dashboard</div>
           <a href="#">
             <span className="sr-only">Seu Perfil</span>
-            <img
-              alt=""
+            <Image
+              alt="avatar"
               src={user.avatar}
               className="size-8 rounded-full bg-gray-800"
             />
