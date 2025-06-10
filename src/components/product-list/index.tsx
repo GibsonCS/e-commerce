@@ -1,4 +1,6 @@
 import Image from "next/image"
+import direitoImage from '../../../public/direito.jpg'
+
 
 const products = [
   {
@@ -8,7 +10,7 @@ const products = [
     price: 'R$ 25,996',
     description: 'Get the full lineup of our Curso de Direito Penals. Have a fresh shirt all week, and an extra for laundry day.',
     options: '8 colors',
-    imageSrc: 'https://img.freepik.com/fotos-premium/abra-o-livro-de-direito-na-biblioteca_488220-35552.jpg',
+    imageSrc: direitoImage,
     imageAlt: 'Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green.',
   },
   {
@@ -18,7 +20,7 @@ const products = [
     price: 'R$ 32,99',
     description: 'Look like a visionary CEO and wear the same black t-shirt every day.',
     options: 'Black',
-    imageSrc: 'https://img.freepik.com/fotos-premium/abra-o-livro-de-direito-na-biblioteca_488220-35552.jpg',
+    imageSrc: direitoImage,
     imageAlt: 'Front of plain black t-shirt.',
   },
   {
@@ -28,7 +30,7 @@ const products = [
     price: 'R$ 32,99',
     description: 'Look like a visionary CEO and wear the same black t-shirt every day.',
     options: 'Black',
-    imageSrc: 'https://img.freepik.com/fotos-premium/abra-o-livro-de-direito-na-biblioteca_488220-35552.jpg',
+    imageSrc: direitoImage,
     imageAlt: 'Front of plain black t-shirt.',
   },
   {
@@ -38,7 +40,7 @@ const products = [
     price: 'R$ 32,99',
     description: 'Look like a visionary CEO and wear the same black t-shirt every day.',
     options: 'Black',
-    imageSrc: 'https://img.freepik.com/fotos-premium/abra-o-livro-de-direito-na-biblioteca_488220-35552.jpg',
+    imageSrc: direitoImage,
     imageAlt: 'Front of plain black t-shirt.',
   },
   {
@@ -48,7 +50,7 @@ const products = [
     price: 'R$ 32,99',
     description: 'Look like a visionary CEO and wear the same black t-shirt every day.',
     options: 'Black',
-    imageSrc: 'https://img.freepik.com/fotos-premium/abra-o-livro-de-direito-na-biblioteca_488220-35552.jpg',
+    imageSrc: direitoImage,
     imageAlt: 'Front of plain black t-shirt.',
   },
   {
@@ -58,7 +60,7 @@ const products = [
     price: 'R$ 32,99',
     description: 'Look like a visionary CEO and wear the same black t-shirt every day.',
     options: 'Black',
-    imageSrc: 'https://img.freepik.com/fotos-premium/abra-o-livro-de-direito-na-biblioteca_488220-35552.jpg',
+    imageSrc: direitoImage,
     imageAlt: 'Front of plain black t-shirt.',
   },
   // More products...
@@ -79,7 +81,8 @@ export default function ProductList() {
               <Image
                 alt={product.imageAlt}
                 src={product.imageSrc}
-                className="aspect-3/4 w-full bg-gray-200 object-cover group-hover:opacity-75 sm:aspect-auto sm:h-96"
+                // width={50}
+                // height={50}
               />
               <div className="flex flex-1 flex-col space-y-2 p-4">
                 <h3 className="text-sm font-medium text-gray-900">

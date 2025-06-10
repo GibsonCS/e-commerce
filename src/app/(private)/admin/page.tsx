@@ -1,6 +1,7 @@
 import { auth } from "../../../../auth";
 import { redirect } from "next/navigation";
 import Dashboard from "@/components/dashboard";
+import logo from '@/assets/images/logo.svg'
 
 export default async function AdminPage() {
   //Get session data
@@ -9,7 +10,7 @@ export default async function AdminPage() {
 
   const user = {
     username: session.user?.name,
-    avatar: '454'
+    avatar: logo
   }
 
   return (
