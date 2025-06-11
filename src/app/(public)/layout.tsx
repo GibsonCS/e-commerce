@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import "../globals.css";
 
-
 export const metadata: Metadata = {
   title: "EXtude",
   description: "Course for judge area",
 };
 
 
-export default function DashboardLayout({
+export default function Layout({
   children,
 }: {
   children: React.ReactNode
@@ -16,7 +15,7 @@ export default function DashboardLayout({
   return (
     <html lang="pt-br">
       <body>
-        <main>{children}</main>
+        <main className="bg-slate-200">{children}</main>
       </body>
     </html>
   )

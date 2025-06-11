@@ -8,8 +8,8 @@ export default async function LoginPage() {
   if(session) return redirect('/admin')
 
   return (
-    <main className="flex flex-col min-h-screen">
+    <> 
       <Login />
-    </main>
+    </>
   );
 }

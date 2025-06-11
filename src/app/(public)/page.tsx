@@ -4,10 +4,10 @@ import ProductList from "@/components/product-list";
 
 export default async function Home() {
   return (
-      <main>
+        <>
         <Header />
-        <ProductList />
+          <ProductList />
         <Footer />
-      </main>
+        </>
   )
 }
