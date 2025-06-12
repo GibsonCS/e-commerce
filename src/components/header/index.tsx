@@ -1,32 +1,32 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Link from 'next/link'
-import logo from '../../../public/supreme.png'
-import Image from 'next/image'
+import { useState } from "react";
+import { Dialog, DialogPanel } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
+import logo from "../../../public/supreme.png";
+import Image from "next/image";
 
 const navigation = [
-  { name: 'Cursos', href: '#' },
-  { name: 'Professores', href: "/professores" },
-  { name: 'Depoimentos', href: '#' },
-  { name: 'Contato', href: '#' },
-]
+  { name: "Cursos", href: "/cursos" },
+  { name: "Professores", href: "/professores" },
+  { name: "Depoimentos", href: "#" },
+  { name: "Contato", href: "#" },
+];
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="bg-gray-900">
-      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+      <nav
+        aria-label="Global"
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+      >
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Extude</span>
-            <Image
-              alt="Logo extude"
-              src={logo}
-            />
+            <Image alt="Logo extude" src={logo} />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -41,7 +41,11 @@ export default function Header() {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <Link key={item.name} href={item.href} className="text-sm/6 font-semibold text-white">
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-sm/6 font-semibold text-white"
+            >
               {item.name}
             </Link>
           ))}
@@ -52,7 +56,11 @@ export default function Header() {
           </Link>
         </div>
       </nav>
-      <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
+      <Dialog
+        open={mobileMenuOpen}
+        onClose={setMobileMenuOpen}
+        className="lg:hidden"
+      >
         <div className="fixed inset-0 z-50" />
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
           <div className="flex items-center justify-between">
@@ -99,5 +107,5 @@ export default function Header() {
         </DialogPanel>
       </Dialog>
     </header>
-  )
+  );
 }
