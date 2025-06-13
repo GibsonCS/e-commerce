@@ -4,14 +4,15 @@ import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import logo from "../../../public/supreme.png";
+// import logo from "../../../public/supreme.png";
 import Image from "next/image";
 
 const navigation = [
+  { name: "Início", href: "/" },
   { name: "Cursos", href: "/cursos" },
   { name: "Professores", href: "/professores" },
-  { name: "Depoimentos", href: "#" },
-  { name: "Contato", href: "#" },
+  { name: "Contato", href: "contato" },
+  { name: "Sobre nós", href: "sobre-nos" },
 ];
 
 export default function Header() {
@@ -24,10 +25,10 @@ export default function Header() {
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
+          {/* <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Extude</span>
             <Image alt="Logo extude" src={logo} />
-          </Link>
+          </Link> */}
         </div>
         <div className="flex lg:hidden">
           <button

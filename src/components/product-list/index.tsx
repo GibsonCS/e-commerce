@@ -1,70 +1,76 @@
-import Image from "next/image"
-import direitoImage from '../../../public/direito.jpg'
-
+import Image from "next/image";
+import direitoImage from "../../../public/direito.jpg";
 
 const products = [
   {
     id: 1,
-    name: 'Curso de Direito Penal',
-    href: '#',
-    price: 'R$ 25,996',
-    description: 'Get the full lineup of our Curso de Direito Penals. Have a fresh shirt all week, and an extra for laundry day.',
-    options: '8 colors',
+    name: "Curso de Direito Penal",
+    href: "#",
+    price: "R$ 25,996",
+    description:
+      "Get the full lineup of our Curso de Direito Penals. Have a fresh shirt all week, and an extra for laundry day.",
+    options: "8 colors",
     imageSrc: direitoImage,
-    imageAlt: 'Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green.',
+    imageAlt:
+      "Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green.",
   },
   {
     id: 2,
-    name: 'Curso de Direito Penal',
-    href: '#',
-    price: 'R$ 32,99',
-    description: 'Look like a visionary CEO and wear the same black t-shirt every day.',
-    options: 'Black',
+    name: "Curso de Direito Penal",
+    href: "#",
+    price: "R$ 32,99",
+    description:
+      "Look like a visionary CEO and wear the same black t-shirt every day.",
+    options: "Black",
     imageSrc: direitoImage,
-    imageAlt: 'Front of plain black t-shirt.',
+    imageAlt: "Front of plain black t-shirt.",
   },
   {
     id: 3,
-    name: 'Curso de Direito Penal',
-    href: '#',
-    price: 'R$ 32,99',
-    description: 'Look like a visionary CEO and wear the same black t-shirt every day.',
-    options: 'Black',
+    name: "Curso de Direito Penal",
+    href: "#",
+    price: "R$ 32,99",
+    description:
+      "Look like a visionary CEO and wear the same black t-shirt every day.",
+    options: "Black",
     imageSrc: direitoImage,
-    imageAlt: 'Front of plain black t-shirt.',
+    imageAlt: "Front of plain black t-shirt.",
   },
   {
     id: 4,
-    name: 'Curso de Direito Penal',
-    href: '#',
-    price: 'R$ 32,99',
-    description: 'Look like a visionary CEO and wear the same black t-shirt every day.',
-    options: 'Black',
+    name: "Curso de Direito Penal",
+    href: "#",
+    price: "R$ 32,99",
+    description:
+      "Look like a visionary CEO and wear the same black t-shirt every day.",
+    options: "Black",
     imageSrc: direitoImage,
-    imageAlt: 'Front of plain black t-shirt.',
+    imageAlt: "Front of plain black t-shirt.",
   },
   {
     id: 5,
-    name: 'Curso de Direito Penal',
-    href: '#',
-    price: 'R$ 32,99',
-    description: 'Look like a visionary CEO and wear the same black t-shirt every day.',
-    options: 'Black',
+    name: "Curso de Direito Penal",
+    href: "#",
+    price: "R$ 32,99",
+    description:
+      "Look like a visionary CEO and wear the same black t-shirt every day.",
+    options: "Black",
     imageSrc: direitoImage,
-    imageAlt: 'Front of plain black t-shirt.',
+    imageAlt: "Front of plain black t-shirt.",
   },
   {
     id: 6,
-    name: 'Curso de Direito Penal',
-    href: '#',
-    price: 'R$ 32,99',
-    description: 'Look like a visionary CEO and wear the same black t-shirt every day.',
-    options: 'Black',
+    name: "Curso de Direito Penal",
+    href: "#",
+    price: "R$ 32,99",
+    description:
+      "Look like a visionary CEO and wear the same black t-shirt every day.",
+    options: "Black",
     imageSrc: direitoImage,
-    imageAlt: 'Front of plain black t-shirt.',
+    imageAlt: "Front of plain black t-shirt.",
   },
   // More products...
-]
+];
 
 export default function ProductList() {
   return (
@@ -93,8 +99,12 @@ export default function ProductList() {
                 </h3>
                 <p className="text-sm text-gray-500">{product.description}</p>
                 <div className="flex flex-1 flex-col justify-end">
-                  <p className="text-sm text-gray-500 italic">{product.options}</p>
-                  <p className="text-base font-medium text-gray-900">{product.price}</p>
+                  <p className="text-sm text-gray-500 italic">
+                    {product.options}
+                  </p>
+                  <p className="text-base font-medium text-gray-900">
+                    {product.price}
+                  </p>
                 </div>
               </div>
             </div>
@@ -102,5 +112,5 @@ export default function ProductList() {
         </div>
       </div>
     </div>
-  )
+  );
 }
