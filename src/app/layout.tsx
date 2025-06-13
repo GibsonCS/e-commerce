@@ -10,7 +10,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-br">
       <body>
-        <main className="bg-slate-200">{children}</main>
+        <main className="min-h-screen">{children}</main>
       </body>
     </html>
   );
