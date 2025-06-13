@@ -5,6 +5,7 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import direito from "@/assets/images/direito.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const navigation = [
   { name: "Cursos", href: "/cursos" },
@@ -51,9 +52,9 @@ export default function Example() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm/6 font-semibold text-white">
+            <Link href="/login" className="text-sm/6 font-semibold text-white">
               Log in <span aria-hidden="true">&rarr;</span>
-            </a>
+            </Link>
           </div>
         </nav>
         <Dialog
@@ -91,12 +92,12 @@ export default function Example() {
                   ))}
                 </div>
                 <div className="py-6">
-                  <a
-                    href="#"
+                  <Link
+                    href="/login"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-gray-800"
                   >
                     Log in
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
