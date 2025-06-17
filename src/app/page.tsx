@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import direito from "@/assets/images/direito.png";
@@ -17,10 +17,26 @@ const navigation = [
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setScroll(false);
+      } else if (window.scrollY >= 92) {
+        setScroll(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="bg-gray-900">
-      <header className="absolute inset-x-0 top-0 z-50">
+      <header
+        className={`absolute inset-x-0 top-0 z-50 ${
+          scroll === true ? "fixed bg-gray-900 opacity-80" : ""
+        }`}
+      >
         <nav
           aria-label="Global"
           className="flex items-center justify-between p-6 lg:px-8"
